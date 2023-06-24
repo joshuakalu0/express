@@ -2,6 +2,11 @@ const dotenv = require("dotenv");
 const app = require("./app");
 const mongoose = require("mongoose");
 dotenv.config({ path: `./config.env` });
+const os = require("os");
+
+// get host name
+const hostName = os.hostname();
+console.log(hostName);
 
 const db = process.env.MONGODB_URI;
 const port = process.env.PORT || 3001;
