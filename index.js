@@ -10,4 +10,4 @@ mongoose
   .connect(db)
   .then((con) => console.log("db connected successfully !!!"));
 
-app.listen(port, host, () => console.log(`server running on ${host}:${port}`));
+app.listen(port, () => console.log(`server running on :${port}`));
