@@ -13,7 +13,7 @@ const measurementRoute = require(path.resolve(
 const controller = require(path.resolve(__dirname, "controller/controller"));
 const globalErrorHandler = require(path.resolve(
   __dirname,
-  "controller/errorcontroller"
+  "controller/errorController"
 ));
 
 // middlewares
