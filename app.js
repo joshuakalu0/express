@@ -1,5 +1,6 @@
 // imports
 const express = require("express");
+var cors = require("cors");
 const path = require("path");
 
 // Router
@@ -19,6 +20,7 @@ const globalErrorHandler = require(path.resolve(
 // middlewares
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use(controller.reqDetails);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/catalogs", catalogRoute);
