@@ -32,7 +32,7 @@ module.exports = class ApiFeatures {
 
   filter() {
     let queryObj = { ...this.reqQuery };
-    const exlud_fields = ["sort", "limit", "page", "fields"];
+    const exlud_fields = ["sort", "limit", "page", "fields", "searchBy"];
     exlud_fields.forEach((ev) => delete queryObj[ev]);
     console.log(queryObj);
     const queryStr = JSON.stringify(queryObj).replace(
@@ -44,6 +44,7 @@ module.exports = class ApiFeatures {
   }
   regx() {
     if (this.reqQuery.searchBy) {
+      // console.log(this.reqQuery.searchBy, "search");
       const [field, word] = this.reqQuery.searchBy.split(",");
       const reg = new RegExp(word, "i");
       const queryStr = {
